@@ -1,11 +1,50 @@
-.nav {
-  background-color: rgb(119, 151, 221);
+.NavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.nav ul {
+
+.NavBar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.NavBar a {
+  text-decoration: none;
+  color: rgb(231, 235, 239);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Active link styling */
+.NavBar a.active {
+  color: lightblue;
+}
+
+/* .nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
   background-color: rgb(99, 99, 241);
-  color: aqua;
-  margin: 0%;
+  padding: 10px;
 }
+
+.nav li {
+  padding: 5px 10px;
+}
+
+.nav .text-white {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+/* Active link styling
+.nav .text-white.active {
+  background-color: antiquewhite;
+  color: black;
+  border-radius: 5px;
+} */

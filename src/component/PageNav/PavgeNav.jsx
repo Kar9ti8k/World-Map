@@ -4,22 +4,25 @@ import { NavLink } from 'react-router-dom'
 const PavgeNav = () => {
   return (
     <>
-      <nav className='nav'>
-        {' '}
+      <nav className='NavBar'>
         <ul>
-          {' '}
           <li>
-            <NavLink to='/'>Home</NavLink>
+            <NavLink className='text-white' to='/Pricing'>
+              Pricing
+            </NavLink>
           </li>
           <li>
-            {' '}
-            <NavLink to='/Pricing'>Pricing</NavLink>
+            <NavLink className='text-white' to='/product'>
+              product
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/product'>product</NavLink>
+            <NavLink className='text-white' to='/Login'>
+              Login
+            </NavLink>
           </li>
         </ul>
-      </nav>{' '}
+      </nav>
     </>
   )
 }

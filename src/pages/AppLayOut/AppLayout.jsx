@@ -1,7 +1,12 @@
 import React from 'react'
+import AppNav from '../../component/AppNav/AppNav'
 
 const AppLayout = () => {
-  return <div>AppLayout</div>
+  return (
+    <>
+      <AppNav />
+    </>
+  )
 }
 
 export default AppLayout

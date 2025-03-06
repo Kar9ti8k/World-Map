@@ -20,10 +20,17 @@ const App = () => {
     {
       path: '/product',
       element: <Products />,
+      // children:[
+
+      // ]
     },
     {
       path: '/Pricing',
       element: <Pricing />,
+    },
+    {
+      path: '/app',
+      element: <AppLayout />,
     },
   ])
   return (
