@@ -3,7 +3,7 @@ import './Homepage.css'
 
 import PavgeNav from '../../component/PageNav/PavgeNav'
 import AppNav from '../../component/AppNav/AppNav'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 const HomePage = () => {
   return (
     <>
@@ -20,6 +20,9 @@ const HomePage = () => {
             of. Never forget your wonderful experiences, and show your friends
             how you have wandered the world.
           </h2>
+          <Link to='/Login' className='cta'>
+            Strat tracking now
+          </Link>
         </section>
       </main>
     </>

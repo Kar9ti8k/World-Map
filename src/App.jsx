@@ -6,6 +6,7 @@ import HomePage from './pages/Homepage/HomePage'
 import Products from './pages/Product/Products'
 import Pricing from './pages/Pricing/Pricing'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
+import LogIn from './pages/LogIn/LogIn'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const App = () => {
     {
       path: '/Pricing',
       element: <Pricing />,
+    },
+    {
+      path: '/Login',
+      element: <LogIn />,
     },
     {
       path: '/app',
