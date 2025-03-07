@@ -5,8 +5,17 @@ import { NavLink } from 'react-router-dom'
 const AppNav = () => {
   return (
     <>
-      <nav className='navBar'>AppNav</nav>
-      <NavLink to='/'>go back</NavLink>
+      <nav className='navBar'>
+        <ul>
+          {' '}
+          <li>
+            <NavLink to='cities'>citie</NavLink>
+          </li>
+          <li>
+            <NavLink to='country'>country</NavLink>
+          </li>
+        </ul>
+      </nav>
     </>
   )
 }

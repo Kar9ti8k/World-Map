@@ -1,0 +1,24 @@
+.navBar {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.navBar ul {
+  display: flex;
+  list-style: none;
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+}
+.navBar a:link,
+.navBar.a:visited {
+  display: block;
+  color: inherit;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.navBar a.active {
+  background-color: rgb(125, 127, 128);
+}
