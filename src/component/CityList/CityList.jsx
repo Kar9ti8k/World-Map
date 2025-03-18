@@ -7,7 +7,7 @@ const CityList = ({ isLoading, cities }) => {
   return (
     <ul className='cityList'>
       {cities.map((city) => (
-        <Cityitem city={city} key={city.id} />
+        <CityItem key={city.id} city={city} /> // Pass city data and add key prop
       ))}
     </ul>
   )
