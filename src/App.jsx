@@ -1,15 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AppLayout from './pages/AppLayOut/AppLayout'
-
+import axios from 'axios'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomePage from './pages/Homepage/HomePage'
 import Products from './pages/Product/Products'
 import Pricing from './pages/Pricing/Pricing'
 import PageNotFound from './pages/PageNotFound/PageNotFound'
 import LogIn from './pages/LogIn/LogIn'
-import { Sidebar } from './component/Sidebar/Sidebar'
+import { useState } from 'react'
+import Spinner from './component/Sppinner/Spinner'
+import CityList from './component/CityList/CityList'
+const BASE_URL = 'http://localhost:8000'
 
 const App = () => {
+  const [cities, setCities] = useState([]) // Fixed typo in state variable name
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    async function fetchCities() {
+      try {
+        setIsLoading(true)
+        const res = await fetch(`${BASE_URL}/cities`)
+        const data = await res.json()
+        setCities(data)
+      } catch (error) {
+        alert('There was an error loading data...')
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchCities()
+  }, [])
   const router = createBrowserRouter([
     {
       path: '*',
@@ -22,13 +44,14 @@ const App = () => {
     {
       path: '/product',
       element: <Products />,
-      // children:[
-
-      // ]
     },
     {
       path: '/Pricing',
       element: <Pricing />,
+    },
+    {
+      path: '/spinner',
+      element: <Spinner />,
     },
     {
       path: '/Login',
@@ -40,11 +63,11 @@ const App = () => {
       children: [
         {
           index: true,
-          element: <p>List of cities</p>,
+          element: <CityList isLoading={isLoading} cities={cities} />,
         },
         {
           path: 'cities',
-          element: <p>List of cities no</p>,
+          element: <CityList isLoading={isLoading} cities={cities} />,
         },
         {
           path: 'country',
