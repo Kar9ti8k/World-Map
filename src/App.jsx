@@ -11,7 +11,6 @@ import { useState } from 'react'
 import Spinner from './component/Sppinner/Spinner'
 import CityList from './component/CityList/CityList'
 const BASE_URL = [
-  ,
   {
     cityName: 'Lisbon',
     country: 'Portugal',
