@@ -20,6 +20,23 @@
   font-weight: 500;
   margin-right: auto;
 }
+
 .date {
   font-size: 1.5rem;
+}
+.deleteBtn {
+  height: 2rem;
+  background-color: rgb(100, 103, 103);
+  border-radius: 50%;
+  border: none;
+  aspect-ratio: 1;
+  font-size: 1.2rem;
+  color: rgb(231, 240, 248);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.deleteBtn:hover {
+  background-color: rgb(214, 231, 20);
+  color: rgb(127, 125, 125);
 }

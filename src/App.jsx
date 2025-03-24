@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import AppLayout from './pages/AppLayOut/AppLayout'
-import axios from 'axios'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import HomePage from './pages/Homepage/HomePage'
 import Products from './pages/Product/Products'
 import Pricing from './pages/Pricing/Pricing'
@@ -10,29 +10,12 @@ import LogIn from './pages/LogIn/LogIn'
 import { useState } from 'react'
 import Spinner from './component/Sppinner/Spinner'
 import CityList from './component/CityList/CityList'
-const BASE_URL = 'http://localhost:8000'
+import NOnen from './component/nonen/nonen'
+import Countrylist from './component/CountryList/Countrylist'
+import City from './component/City/City'
+import { CitiesProvider } from './contexts/citiesContext'
 
 const App = () => {
-  const [cities, setCities] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    async function fetchCities() {
-      try {
-        setIsLoading(true)
-        const res = await fetch(`${BASE_URL}/cities`)
-        const data = await res.json()
-        setCities(data)
-      } catch (error) {
-        alert('There was an error loading data...')
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    fetchCities()
-  }, [])
-
   const router = createBrowserRouter([
     {
       path: '*',
@@ -65,22 +48,28 @@ const App = () => {
       children: [
         {
           index: true,
-          element: <CityList isLoading={isLoading} cities={cities} />,
+          element: <Navigate to='cities' />,
+        },
+        {
+          path: 'cities/:id',
+          element: <City />,
         },
         {
           path: 'cities',
-          element: <CityList isLoading={isLoading} cities={cities} />,
+          element: <CityList />,
         },
         {
           path: 'country',
-          element: <p>List of country</p>,
+          element: <Countrylist />,
         },
       ],
     },
   ])
   return (
     <>
-      <RouterProvider router={router} />
+      <CitiesProvider>
+        <RouterProvider router={router} />
+      </CitiesProvider>
     </>
   )
 }

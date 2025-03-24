@@ -9,7 +9,7 @@ const AppNav = () => {
         <ul>
           {' '}
           <li>
-            <NavLink to='cities'>citie</NavLink>
+            <NavLink to='cities'>cities</NavLink>
           </li>
           <li>
             <NavLink to='country'>country</NavLink>

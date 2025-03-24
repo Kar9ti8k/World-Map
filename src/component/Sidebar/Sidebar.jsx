@@ -9,7 +9,7 @@ export const Sidebar = () => {
     <div className='sidebar'>
       <Logo />
       <AppNav />
-      <p>List of cities</p>
+
       <Outlet />
       <footer className='footer'>
         <p className=' copyright'>

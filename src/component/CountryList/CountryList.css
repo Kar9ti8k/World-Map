@@ -1,0 +1,12 @@
+.countryList {
+  width: 100%;
+  height: 65vh;
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  align-content: start;
+  gap: 1.8rem;
+}
