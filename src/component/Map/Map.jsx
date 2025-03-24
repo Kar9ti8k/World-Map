@@ -12,6 +12,12 @@ const Map = () => {
       Map{' '}
       <h1>
         Position ,:{lat},{lng}
+        <button
+          style={{ cursor: 'pointer' }}
+          onClick={() => setSerach({ lat: 25, lng: 28 })} //change of value
+        >
+          change
+        </button>
       </h1>
     </div>
   )
